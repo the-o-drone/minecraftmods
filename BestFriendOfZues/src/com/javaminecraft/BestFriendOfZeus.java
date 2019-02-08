@@ -33,10 +33,10 @@ public class BestFriendOfZeus extends JavaPlugin
        me = (Player) sender;
        world = me.getWorld();
        spot = me.getLocation();
-       if (sender inctanceof Player) {
+       if (sender instanceof Player) {
            if (label.equalsIgnoreCase("zeus")) {
-               if (arguments.length > 0) {
-                   if (arguments[0].equals("on")){
+               if (argument.length > 0) {
+                   if (argument[0].equals("on")){
                        //Zeus powers activate
                        on = true;
                        me.sendMessage(
@@ -51,40 +51,40 @@ public class BestFriendOfZeus extends JavaPlugin
                }
            }
        }
+       return false;
    }
-   return false;
-}
-
+   
     //make this class listen to events
     @Override
-    public void omEnable() {
+    public void onEnable() {
     Server server = getServer();
-    PluginManager manager = server.getPluginmanager();
+    PluginManager manager = server.getPluginManager();
     manager.registerEvents(this, this);
     }
 
     @EventHandler
     public void onEntityTarget(EntityTargetEvent event) {
         Entity entity = event.getEntity();
-        Entity Target = event.getTarget();
+        Entity target = event.getTarget();
 
         if (!on) {
             //don't do it, zeus
             return;
         }
-LOG.info("Target " + target + " chosen by " + entity);
-if (target instanceof) Player) {
-//the mod's target is a player
-Player playa = (Player) target;
-if (playa == me) {
-    //mob's target is the player
-    if (event.getReason()==
-        TargetReason.CLOSEST_PLAYER) {
+        LOG.info("Target " + target + " chosen by " + entity);
+        if (target instanceof Player) {
+            //the mod's target is a player
+            Player playa = (Player) target;
+            if (playa == me) {
+                //mob's target is the player
+                if (event.getReason()==
+                    TargetReason.CLOSEST_PLAYER) {
 
-Location loc = entity.getLogation();
-//here come the boom!
-world.strikeLightning(loc);
-}
-}
+                    Location loc = entity.getLocation();
+                    //here come the boom!
+                    world.strikeLightning(loc);
+                }
+            }
+        }
     }
 }
