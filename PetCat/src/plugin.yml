@@ -1,0 +1,11 @@
+name: PetCat
+
+author: Theo
+
+main: com.javaminecraft.PetCat
+
+commands:
+    petcat:
+        description: Spawn a cat.
+        
+version: 1.0
