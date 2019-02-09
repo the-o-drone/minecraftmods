@@ -9,4 +9,4 @@ commands:
         description: Ask zeus to be your best friend
         usage: /<command> [on / off]
 
-vertion: 1.0
+version: 1.0
