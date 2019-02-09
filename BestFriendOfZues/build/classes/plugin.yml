@@ -1,0 +1,12 @@
+name: BestFriendOfZeus
+
+author: Theo
+
+main: com.javaminecraft.BestFriendOfZeus
+
+commands:
+    zeus:
+        description: Ask zeus to be your best friend
+        usage: /<command> [on / off]
+
+vertion: 1.0
